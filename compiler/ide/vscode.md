@@ -48,8 +48,11 @@ tasks.json文件中的
 以静态库为例,执行以下指令，生成静态库fun.a
 
 ```g++ -c fun.cpp```
+
 ```ar -crs fun.a fun.o```
+
 * [multifiles_project_base_lib](demo/multifiles_project_base_lib)
+
 tasks.json文件中的
 ```
             "args": [
