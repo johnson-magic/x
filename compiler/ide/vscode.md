@@ -8,6 +8,7 @@
 |------|------|
 |ctrl + shift + x|打开EXTENSIONS, 寻找插件|
 |code . |在当前文件夹下打开vscode|
+|ctrl + shift + p|打开输入指令窗口|
 
 # 二、重要配置文件
 |配置文件|如何生成|作用|
