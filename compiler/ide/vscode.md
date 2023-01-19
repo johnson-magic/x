@@ -21,6 +21,52 @@
 
 # 三、实际例子
 ## 1. 编译并运行一个含有多个文件夹和文件的代码工程
+* [multifiles_project](demo/multifiles_project)
+
+tasks.json文件中的
+```
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+```
+替换为：
+```
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}", "${fileDirname}/math/*.cpp",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+```
 
 ## 2. 编译并运行一个依赖第三方库的代码工程
+以静态库为例,执行以下指令，生成静态库fun.a
 
+```g++ -c fun.cpp```
+```ar -crs fun.a fun.o```
+* [multifiles_project_base_lib](demo/multifiles_project_base_lib)
+tasks.json文件中的
+```
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+```
+替换为：
+```
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}", "${fileDirname}/math/fun.a",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+```
